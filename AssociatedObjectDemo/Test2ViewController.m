@@ -25,7 +25,7 @@ static void *CMAlertViewKey = "CMAlertViewKey";
     [self.view setBackgroundColor:[UIColor whiteColor]];
     self.title = @"Test2ViewController";
     
-    [self popAlertViews3];
+    [self popAlertViews2];
 }
 
 #pragma mark - way1
@@ -45,48 +45,48 @@ static void *CMAlertViewKey = "CMAlertViewKey";
 //}
 
 #pragma mark - way2
-//- (void)popAlertViews2 {
-//
-//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Question" message:@"What do you want to do?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
-//    void (^block)(NSInteger) = ^(NSInteger buttonIndex){
-//        if (buttonIndex == 0) {
-//            [self doCancel];
-//        } else {
-//            [self doContinue];
-//        }
-//    };
-//    objc_setAssociatedObject(alert,CMAlertViewKey, block,OBJC_ASSOCIATION_COPY);
-//    [alert show];
-//}
-//
-//// UIAlertViewDelegate protocol method
-//- (void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-//
-//    void (^block)(NSInteger) = objc_getAssociatedObject(alertView, CMAlertViewKey);
-//    block(buttonIndex);
-//}
-
-#pragma mark - way3
-- (void)popAlertViews3 {
+- (void)popAlertViews2 {
 
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Question" message:@"What do you want to do?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
-    [alert setCallBlock:^(NSInteger buttonIndex) {
+    void (^clickBlock)(NSInteger) = ^(NSInteger buttonIndex){
         if (buttonIndex == 0) {
             [self doCancel];
         } else {
             [self doContinue];
         }
-    }];
-
+    };
+    objc_setAssociatedObject(alert,CMAlertViewKey,clickBlock,OBJC_ASSOCIATION_COPY);
     [alert show];
 }
 
 // UIAlertViewDelegate protocol method
 - (void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
 
-    void (^block)(NSInteger) = alertView.callBlock;
-    block(buttonIndex);
+    void (^clickBlock)(NSInteger) = objc_getAssociatedObject(alertView, CMAlertViewKey);
+    clickBlock(buttonIndex);
 }
+
+#pragma mark - way3
+//- (void)popAlertViews3 {
+//
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Question" message:@"What do you want to do?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
+//    [alert setCallBlock:^(NSInteger buttonIndex) {
+//        if (buttonIndex == 0) {
+//            [self doCancel];
+//        } else {
+//            [self doContinue];
+//        }
+//    }];
+//
+//    [alert show];
+//}
+//
+//// UIAlertViewDelegate protocol method
+//- (void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+//
+//    void (^block)(NSInteger) = alertView.callBlock;
+//    block(buttonIndex);
+//}
 
 #pragma mark - handle action
 - (void)doCancel{

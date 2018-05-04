@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F72CDC88209C083500167C37 /* UITapGestureRecognizer+NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CDC87209C083500167C37 /* UITapGestureRecognizer+NSString.m */; };
+		F72CDC8B209C087E00167C37 /* Test4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CDC8A209C087E00167C37 /* Test4ViewController.m */; };
 		F7A72F74209B4EBD0040DA65 /* NSObject+AssociatedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A72F6E209B4EBD0040DA65 /* NSObject+AssociatedObject.m */; };
 		F7A72F75209B4EBD0040DA65 /* UIButton+Handle.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A72F70209B4EBD0040DA65 /* UIButton+Handle.m */; };
 		F7A72F76209B4EBD0040DA65 /* UIAlertView+Handle.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A72F71209B4EBD0040DA65 /* UIAlertView+Handle.m */; };
@@ -41,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F72CDC86209C083500167C37 /* UITapGestureRecognizer+NSString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITapGestureRecognizer+NSString.h"; sourceTree = "<group>"; };
+		F72CDC87209C083500167C37 /* UITapGestureRecognizer+NSString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITapGestureRecognizer+NSString.m"; sourceTree = "<group>"; };
+		F72CDC89209C087E00167C37 /* Test4ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test4ViewController.h; sourceTree = "<group>"; };
+		F72CDC8A209C087E00167C37 /* Test4ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test4ViewController.m; sourceTree = "<group>"; };
 		F7A72F6E209B4EBD0040DA65 /* NSObject+AssociatedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AssociatedObject.m"; sourceTree = "<group>"; };
 		F7A72F6F209B4EBD0040DA65 /* UIAlertView+Handle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Handle.h"; sourceTree = "<group>"; };
 		F7A72F70209B4EBD0040DA65 /* UIButton+Handle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Handle.m"; sourceTree = "<group>"; };
@@ -105,6 +111,8 @@
 				F7A72F71209B4EBD0040DA65 /* UIAlertView+Handle.m */,
 				F7A72F73209B4EBD0040DA65 /* UIButton+Handle.h */,
 				F7A72F70209B4EBD0040DA65 /* UIButton+Handle.m */,
+				F72CDC86209C083500167C37 /* UITapGestureRecognizer+NSString.h */,
+				F72CDC87209C083500167C37 /* UITapGestureRecognizer+NSString.m */,
 			);
 			path = AssociatedObject;
 			sourceTree = "<group>";
@@ -139,6 +147,8 @@
 				F7B743292099C25600214A62 /* Test2ViewController.m */,
 				F7B7432B2099C25700214A62 /* Test3ViewController.h */,
 				F7B743282099C25600214A62 /* Test3ViewController.m */,
+				F72CDC89209C087E00167C37 /* Test4ViewController.h */,
+				F72CDC8A209C087E00167C37 /* Test4ViewController.m */,
 				F7B743232099C24D00214A62 /* AppDelegate.h */,
 				F7B743252099C24D00214A62 /* AppDelegate.m */,
 				F7B743242099C24D00214A62 /* ViewController.h */,
@@ -309,9 +319,11 @@
 				F7B743262099C24D00214A62 /* ViewController.m in Sources */,
 				F7B743002099C22D00214A62 /* main.m in Sources */,
 				F7A72F76209B4EBD0040DA65 /* UIAlertView+Handle.m in Sources */,
+				F72CDC8B209C087E00167C37 /* Test4ViewController.m in Sources */,
 				F7A72F75209B4EBD0040DA65 /* UIButton+Handle.m in Sources */,
 				F7B7432E2099C25700214A62 /* Test3ViewController.m in Sources */,
 				F7B743272099C24D00214A62 /* AppDelegate.m in Sources */,
+				F72CDC88209C083500167C37 /* UITapGestureRecognizer+NSString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
